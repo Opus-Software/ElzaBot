@@ -1,18 +1,40 @@
 .home {
-  
+  background: url('../public/hora-do-cafe_sem_botao.jpg') center center no-repeat;
+  background-size: contain;
 
 }
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+    -webkit-box-shadow:$top $left $blur $color #{$inset};
+    -moz-box-shadow:$top $left $blur $color #{$inset};
+    box-shadow:$top $left $blur $color #{$inset};
+}
+
+@mixin trans($val...) {
+   -webkit-transition: $val;
+   -moz-transition: $val; 
+   -o-transition: $val; 
+   transition: $val; 
+}
 .coffee-button{
-    border:1px solid #8B4513;
     border-radius: 10px;
-    background:	#FA8072;
-    color:#fff;
-    font-weight: bold;
-    padding:15px;
+    background: #ef5d2a;
+    color: #fff;
+    font-weight: 400;
+    font-size: xx-large;
     text-align: center;
     vertical-align: center;
-    width: 90%;
-    height: 30%;
-    margin:10px auto;
-    top:40vh;
+    width: 79.1%;
+    height: 20.1%;
+    margin: 0 auto;
+    top: 63.9vh;
+    display: flex;
+    @include trans(0.2s ease-in-out); 
+    @include box-shadow(0, 7px, 0px, rgba(149, 53, 28, 1));
+    &:active{
+        background: #b33e12;
+        color: #ef5d2a;
+        top: 65vh;
+        @include box-shadow(0, 0, 0, rgba(149, 53, 28, 0));
+    }
 }
+
