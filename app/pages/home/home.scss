@@ -18,8 +18,9 @@
    transition: $val; 
 }
 .home {
-  background: url('../public/hora-do-cafe_sem_botao.jpg') center center no-repeat;
-  background-size: contain;
+  background: url('../public/hora-do-cafe_sem_botao.jpg') no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
 .coffee-button{

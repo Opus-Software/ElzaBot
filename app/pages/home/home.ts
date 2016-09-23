@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import { NavController, Button } from 'ionic-angular';
+import { Toast } from 'ionic-native';
+
 @Component({
   templateUrl: 'build/pages/home/home.html',
   directives: [ Button ]
@@ -27,6 +29,17 @@ export class HomePage {
     let url = this.slackUrl;
 
     this.http.post(url, body, { headers: this.header })
-      .subscribe(data => console.log(data));
+      .subscribe(data => console.log(JSON.stringify(data)));
+
+      this.showToast('Enviado');
+
+  }
+
+  private showToast(msg: string) {
+    Toast.showLongBottom(msg).subscribe(
+      toast => {
+        console.log(toast);
+      }
+    );
   }
 }
