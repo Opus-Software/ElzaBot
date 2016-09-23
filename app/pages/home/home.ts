@@ -7,8 +7,8 @@ import { NavController, Button } from 'ionic-angular';
 })
 export class HomePage {
   token: string = 'xoxb-83005887287-ejuGtQcP0Fj0PpTKwTeXFrhr';
-  channel: string = 'elzabot_test';
-  text: string = 'Amanhã teremos café';
+  channel: string = 'cafe';
+  text: string = 'Oi gente, o café está pronto e quente!';
   as_user: boolean = true;
   slackUrl: string = 'https://slack.com/api/chat.postMessage';
 

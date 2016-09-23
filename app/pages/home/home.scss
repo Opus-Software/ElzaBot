@@ -1,8 +1,10 @@
-.home {
-  background: url('../public/hora-do-cafe_sem_botao.jpg') center center no-repeat;
-  background-size: contain;
-
+@font-face{
+    font-family: "Montserrat";
+    src: url("../public/fonts/Montserrat-Bold.ttf") format("truetype"),
+         url("../public/fonts/Montserrat-Regular.ttf") format("truetype");
+         
 }
+
 @mixin box-shadow($top, $left, $blur, $color, $inset:"") {
     -webkit-box-shadow:$top $left $blur $color #{$inset};
     -moz-box-shadow:$top $left $blur $color #{$inset};
@@ -15,10 +17,16 @@
    -o-transition: $val; 
    transition: $val; 
 }
+.home {
+  background: url('../public/hora-do-cafe_sem_botao.jpg') center center no-repeat;
+  background-size: contain;
+}
+
 .coffee-button{
     border-radius: 10px;
-    background: #ef5d2a;
+    background: #ef5d2a !important;
     color: #fff;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: xx-large;
     text-align: center;
@@ -31,10 +39,9 @@
     @include trans(0.2s ease-in-out); 
     @include box-shadow(0, 7px, 0px, rgba(149, 53, 28, 1));
     &:active{
-        background: #b33e12;
+        background: #b33e12 !important;
         color: #ef5d2a;
         top: 65vh;
         @include box-shadow(0, 0, 0, rgba(149, 53, 28, 0));
     }
 }
-
