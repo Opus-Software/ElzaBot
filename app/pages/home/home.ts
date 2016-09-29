@@ -13,6 +13,9 @@ export class HomePage {
   text: string = 'Oi gente, o café está pronto e quente! :coffee:';
   as_user: boolean = true;
   slackUrl: string = 'https://slack.com/api/chat.postMessage';
+  timeout: boolean = false;
+  buttonValue: string = 'ENVIAR!';
+  clock: any;
 
   header: Headers;
   
@@ -29,10 +32,17 @@ export class HomePage {
     let url = this.slackUrl;
 
     this.http.post(url, body, { headers: this.header })
-      .subscribe(data => console.log(JSON.stringify(data)));
+      .subscribe(data => {
+        this.changeTimeout();
+      });
+  }
 
-      this.showToast('Enviado');
+  private changeTimeout() {
+    console.log('changeTimeout');
 
+    this.timeout = !this.timeout;
+
+    this.startTimer(10); 
   }
 
   private showToast(msg: string) {
@@ -42,4 +52,39 @@ export class HomePage {
       }
     );
   }
+
+  private startTimer(duration) {
+
+    console.log('StartTimer: ' + duration);
+
+    var timer = duration;
+    var minutes;
+    var seconds;
+
+    this.buttonValue = 'Enviando...';
+    
+    this.showToast('Enviado');
+
+    this.clock = setInterval( () => {
+        minutes = parseInt((timer / 60).toString(), 10);
+        seconds = parseInt((timer % 60).toString(), 10);
+
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+      
+        duration = minutes + ':' + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+            this.buttonValue = 'ENVIAR!';
+            this.timeout = !this.timeout;
+            clearInterval(this.clock);
+        }else {          
+            this.buttonValue = duration;
+        }
+    }, 1000);
+  }
+
+    
+  
 }
