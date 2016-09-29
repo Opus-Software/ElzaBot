@@ -61,7 +61,7 @@ export class HomePage {
     var minutes;
     var seconds;
 
-    this.buttonValue = 'Enviando...';
+    this.buttonValue = this.buttonValue;
     
     this.showToast('Enviado');
 
