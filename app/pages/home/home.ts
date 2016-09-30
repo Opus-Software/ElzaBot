@@ -31,18 +31,38 @@ export class HomePage {
 
     let url = this.slackUrl;
 
+    this.changeTimeout();
+
     this.http.post(url, body, { headers: this.header })
       .subscribe(data => {
-        this.changeTimeout();
+
+        let body = JSON.parse(data['_body']);
+
+        if (body.ok) {
+          this.startTimer(10);
+        } else {          
+          this.handleError(body.error);
+        }        
+
+      }, error => {
+        this.handleError(error);
       });
+  }
+
+  private handleError(error) {
+    console.log(error);
+    this.showToast('Deu ruim.. :/');
+    this.changeTimeout();
   }
 
   private changeTimeout() {
     console.log('changeTimeout');
-
     this.timeout = !this.timeout;
-
-    this.startTimer(10); 
+  }
+  
+  private changeButtonText(text: string) {
+    console.log('changeButtonText');
+    this.buttonValue = text;    
   }
 
   private showToast(msg: string) {
@@ -57,12 +77,10 @@ export class HomePage {
 
     console.log('StartTimer: ' + duration);
 
-    var timer = duration;
-    var minutes;
-    var seconds;
+    let timer = duration;
+    let minutes;
+    let seconds;
 
-    this.buttonValue = this.buttonValue;
-    
     this.showToast('Enviado');
 
     this.clock = setInterval( () => {
@@ -76,11 +94,12 @@ export class HomePage {
 
         if (--timer < 0) {
             timer = duration;
-            this.buttonValue = 'ENVIAR!';
-            this.timeout = !this.timeout;
+
+            this.changeButtonText('ENVIAR!');
+            this.changeTimeout();
             clearInterval(this.clock);
         }else {          
-            this.buttonValue = duration;
+            this.changeButtonText(duration);
         }
     }, 1000);
   }
