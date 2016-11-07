@@ -1,3 +1,20 @@
+# ElzaBot
+
+No more cold coffee!
+
+Never miss a coffee batch again!
+
+Developed by 5 coffee "dependants" friends and co-workers during a DOJO session, this app will help you get freshly made coffee.
+
+The responsible for preparing coffee just need to press a button once the coffee is ready-to-drink. Everybody interested in this amazing beverage will be instantly notified at the specified slack channel, being able to enjoy the unique smell and taste of recently brewed coffee.
+
+Check out some benefits that drinking coffee may bring to you (according to Medical News Today):
+- Coffee may be protective against type 2 diabetes.
+- Coffee may help control movement in people suffering from Parkinson's
+- Coffee consumption lowers the risk of liver cancer by about 40%
+- Regular consumption of coffee is linked to a reduced risk of primary sclerosing cholangitis (PSC)
+- Drinking coffee in moderation protects against heart failure.
+
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 ## Contributors
