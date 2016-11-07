@@ -1,0 +1,56 @@
+{
+  "projectName": "ElzaBot",
+  "projectOwner": "ggdaltoso",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "ggdaltoso",
+      "name": "Gabriel Gonçalves Daltoso",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6536985?v=3",
+      "profile": "http://ggdaltoso.info",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "lenonestrella",
+      "name": "lenonestrella",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22479629?v=3",
+      "profile": "https://github.com/lenonestrella",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "guilhermeikeda",
+      "name": "Guilherme",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5827916?v=3",
+      "profile": "https://github.com/guilhermeikeda",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "thiagogt-opus",
+      "name": "thiago toledo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17054914?v=3",
+      "profile": "https://github.com/thiagogt-opus",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "nayramartins",
+      "name": "Nayra Martins",
+      "avatar_url": "https://avatars.githubusercontent.com/u/17930618?v=3",
+      "profile": "https://github.com/nayramartins",
+      "contributions": [
+        "design"
+      ]
+    }
+  ]
+}
