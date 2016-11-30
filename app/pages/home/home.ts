@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import { NavController, Button } from 'ionic-angular';
-import { Toast } from 'ionic-native';
+import { NavController, Button, Platform } from 'ionic-angular';
+import { Toast, Splashscreen } from 'ionic-native';
 import { Config } from '../../config/Config';
 
 @Component({
@@ -22,7 +22,13 @@ export class HomePage {
   header: Headers;
   
   constructor(private navCtrl: NavController,
-              private http: Http) {
+              private http: Http,
+              platform: Platform) {
+
+      platform.ready().then(() => {
+        Splashscreen.hide();
+      });
+      
       this.header = new Headers();
       this.header.append('Content-Type', 'application/x-www-form-urlencoded');
   }
